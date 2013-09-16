@@ -1,0 +1,131 @@
+[github.newauth] : curl -k -u "clyps:clyps1253" -X POST -d "{\"scopes\": [ \"user\",\"public_repo\",\"repo\",\"gist\",\"delete_repo\"], \"note\": \"clyps admin script\"}" https://api.github.com/authorizations
+{
+  "id": 3692270,
+  "url": "https://api.github.com/authorizations/3692270",
+  "app": {
+    "name": "clyps admin script (API)",
+    "url": "http://developer.github.com/v3/oauth/#oauth-authorizations-api",
+    "client_id": "00000000000000000000"
+  },
+  "token": "3b053ccd860d9282e6579708bd73e043ddfbc821",
+  "note": "clyps admin script",
+  "note_url": null,
+  "created_at": "2013-09-16T22:51:05Z",
+  "updated_at": "2013-09-16T22:51:05Z",
+  "scopes": [
+    "user",
+    "public_repo",
+    "repo",
+    "gist",
+    "delete_repo"
+  ]
+}
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+[github.delrepo] : curl -k -H "Authorization: token 3b053ccd860d9282e6579708bd73e043ddfbc821" -X DELETE  https://api.github.com/repos/clyps/app1372537036-1216  2>> app.log
+
+[github.newrepo] : curl -k -H "Authorization: token 3b053ccd860d9282e6579708bd73e043ddfbc821" -X POST -d "{  \"name\": \"app1372537036-1216\",  \"description\": \"clyps admin repo\",  \"homepage\": \"https://github.com\",  \"private\": false,  \"has_issues\": false,  \"has_wiki\": false,  \"has_downloads\": true}" https://api.github.com/user/repos
+{
+  "id": 12880724,
+  "name": "app1372537036-1216",
+  "full_name": "clyps/app1372537036-1216",
+  "owner": {
+    "login": "clyps",
+    "id": 5073470,
+    "avatar_url": "https://1.gravatar.com/avatar/10d9545b3777fc91d428096156f637c8?d=https%3A%2F%2Fidenticons.github.com%2F8ba6105bafe9468d7514428215ead65b.png",
+    "gravatar_id": "10d9545b3777fc91d428096156f637c8",
+    "url": "https://api.github.com/users/clyps",
+    "html_url": "https://github.com/clyps",
+    "followers_url": "https://api.github.com/users/clyps/followers",
+    "following_url": "https://api.github.com/users/clyps/following{/other_user}",
+    "gists_url": "https://api.github.com/users/clyps/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/clyps/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/clyps/subscriptions",
+    "organizations_url": "https://api.github.com/users/clyps/orgs",
+    "repos_url": "https://api.github.com/users/clyps/repos",
+    "events_url": "https://api.github.com/users/clyps/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/clyps/received_events",
+    "type": "User"
+  },
+  "private": false,
+  "html_url": "https://github.com/clyps/app1372537036-1216",
+  "description": "clyps admin repo",
+  "fork": false,
+  "url": "https://api.github.com/repos/clyps/app1372537036-1216",
+  "forks_url": "https://api.github.com/repos/clyps/app1372537036-1216/forks",
+  "keys_url": "https://api.github.com/repos/clyps/app1372537036-1216/keys{/key_id}",
+  "collaborators_url": "https://api.github.com/repos/clyps/app1372537036-1216/collaborators{/collaborator}",
+  "teams_url": "https://api.github.com/repos/clyps/app1372537036-1216/teams",
+  "hooks_url": "https://api.github.com/repos/clyps/app1372537036-1216/hooks",
+  "issue_events_url": "https://api.github.com/repos/clyps/app1372537036-1216/issues/events{/number}",
+  "events_url": "https://api.github.com/repos/clyps/app1372537036-1216/events",
+  "assignees_url": "https://api.github.com/repos/clyps/app1372537036-1216/assignees{/user}",
+  "branches_url": "https://api.github.com/repos/clyps/app1372537036-1216/branches{/branch}",
+  "tags_url": "https://api.github.com/repos/clyps/app1372537036-1216/tags",
+  "blobs_url": "https://api.github.com/repos/clyps/app1372537036-1216/git/blobs{/sha}",
+  "git_tags_url": "https://api.github.com/repos/clyps/app1372537036-1216/git/tags{/sha}",
+  "git_refs_url": "https://api.github.com/repos/clyps/app1372537036-1216/git/refs{/sha}",
+  "trees_url": "https://api.github.com/repos/clyps/app1372537036-1216/git/trees{/sha}",
+  "statuses_url": "https://api.github.com/repos/clyps/app1372537036-1216/statuses/{sha}",
+  "languages_url": "https://api.github.com/repos/clyps/app1372537036-1216/languages",
+  "stargazers_url": "https://api.github.com/repos/clyps/app1372537036-1216/stargazers",
+  "contributors_url": "https://api.github.com/repos/clyps/app1372537036-1216/contributors",
+  "subscribers_url": "https://api.github.com/repos/clyps/app1372537036-1216/subscribers",
+  "subscription_url": "https://api.github.com/repos/clyps/app1372537036-1216/subscription",
+  "commits_url": "https://api.github.com/repos/clyps/app1372537036-1216/commits{/sha}",
+  "git_commits_url": "https://api.github.com/repos/clyps/app1372537036-1216/git/commits{/sha}",
+  "comments_url": "https://api.github.com/repos/clyps/app1372537036-1216/comments{/number}",
+  "issue_comment_url": "https://api.github.com/repos/clyps/app1372537036-1216/issues/comments/{number}",
+  "contents_url": "https://api.github.com/repos/clyps/app1372537036-1216/contents/{+path}",
+  "compare_url": "https://api.github.com/repos/clyps/app1372537036-1216/compare/{base}...{head}",
+  "merges_url": "https://api.github.com/repos/clyps/app1372537036-1216/merges",
+  "archive_url": "https://api.github.com/repos/clyps/app1372537036-1216/{archive_format}{/ref}",
+  "downloads_url": "https://api.github.com/repos/clyps/app1372537036-1216/downloads",
+  "issues_url": "https://api.github.com/repos/clyps/app1372537036-1216/issues{/number}",
+  "pulls_url": "https://api.github.com/repos/clyps/app1372537036-1216/pulls{/number}",
+  "milestones_url": "https://api.github.com/repos/clyps/app1372537036-1216/milestones{/number}",
+  "notifications_url": "https://api.github.com/repos/clyps/app1372537036-1216/notifications{?since,all,participating}",
+  "labels_url": "https://api.github.com/repos/clyps/app1372537036-1216/labels{/name}",
+  "created_at": "2013-09-16T22:51:09Z",
+  "updated_at": "2013-09-16T22:51:09Z",
+  "pushed_at": "2013-09-16T22:51:09Z",
+  "git_url": "git://github.com/clyps/app1372537036-1216.git",
+  "ssh_url": "git@github.com:clyps/app1372537036-1216.git",
+  "clone_url": "https://github.com/clyps/app1372537036-1216.git",
+  "svn_url": "https://github.com/clyps/app1372537036-1216",
+  "homepage": "https://github.com",
+  "size": 0,
+  "watchers_count": 0,
+  "language": null,
+  "has_issues": false,
+  "has_downloads": true,
+  "has_wiki": false,
+  "forks_count": 0,
+  "mirror_url": null,
+  "open_issues_count": 0,
+  "forks": 0,
+  "open_issues": 0,
+  "watchers": 0,
+  "permissions": {
+    "admin": true,
+    "push": true,
+    "pull": true
+  },
+  "network_count": 0,
+  "master_branch": "master",
+  "default_branch": "master"
+}
+
+[git.init] : git init 2>> app.log
+Initialized empty Git repository in D:/xampp/htdocs/eventvisit/manager/accounts/demo@eventvisit.com/app1372537036-1216/app/.git/
+
+[git.config.email] : git config user.email 'dev@clyps.com'  2>> app.log
+
+[git.config.user] : git config user.name 'clyps'  2>> app.log
+
+[git.touch.readme] : touch README.txt 2>> app.log
+
+[git.add.readme] : git add README.txt 2>> app.log
+

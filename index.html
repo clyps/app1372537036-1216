@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Event App</title>
+
+        <meta http-Equiv="Cache-Control" Content="no-cache"/>
+        <meta http-Equiv="Pragma" Content="no-cache"/>
+        <meta http-Equiv="Expires" Content="0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script type="text/javascript" src="js/jquery-1.7/jquery-1.7.min.js"></script>
+        <script type="text/javascript" src="js/jquery-UI/js/jquery-ui-1.8.22.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+        <script type="text/javascript" src="js/jquery-json/jquery.json-2.3.min.js"></script>
+        <script type="text/javascript" src="js/jquery-populate/jquery-populate.js"></script>
+        <script type="text/javascript" src="js/jquery-deepextend/jquery-deepextend.js"></script>
+
+        <link rel="shortcut icon" href="icon.png" type="image/png" />
+
+        <link rel="stylesheet" type="text/css" href="js/jquery-UI/css/ui-lightness/jquery-ui-1.8.22.custom.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+        <script type="text/javascript" src="js/jquery-listview/listview.js"></script>
+        <script src="js/jquery-scheduleview/jquery-scheduleview.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="js/jquery-scheduleview/jquery-scheduleview.css" />
+
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link rel="stylesheet" type="text/css" href="js/jquery-listview/listview.css" />
+    </head>
+    <body onload="onLoad()">
+        <div id="header" class="hide">
+            <img src="icon.png" onclick="showActions()" id="mainIcon" class="icon"/> <strong id="pageTitle">Welcome !</strong> 
+            <!-- <img align="right" src="images/icons/actions.png" onclick="showPage('homepage');updateStyles(true);" class="icon" style="margin-right: 2.5em;"/> 
+            <img align="right" src="images/icons/network.png" onclick="if(confirm('Are you sure ? all data will be clear')){clearStorage()}" class="icon" />  -->
+            <img align="right" src="images/icons/refresh.png" onclick="window.location.reload()" class="icon" style="margin-right: 2.5em;"/> 
+            <img align="right" id="listIcon" src="images/icons/list.png" onclick="" class="icon hide" />
+        </div>
+
+        
+        <div id="actions" class="hide">
+            <ul>
+                <li onclick="alert('Partager')"><img src="images/actions/share.png" class="icon"/> Share
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="images/actions/email.png" class="icon"/>&nbsp;&nbsp;&nbsp;
+                    <img src="images/actions/facebook.png" class="icon"/>&nbsp;&nbsp;&nbsp;
+                    <img src="images/actions/twitter.png" class="icon"/>&nbsp;&nbsp;&nbsp;
+                    <img src="images/actions/linkedin.png" class="icon"/>
+                </li>
+                <li onclick="alert('Partager')"><img src="images/actions/locateonplan.png" class="icon"/> Locate on plan</li>
+                <li onclick="alert('Partager')"><img src="images/actions/locateonmap.png" class="icon"/> Locate on map</li>
+                <li onclick="alert('Partager')"><img src="images/actions/rate.png" class="icon"/> Rate</li>
+                <li onclick="alert('Partager')"><img src="images/actions/notes.png" class="icon"/> Notes</li>
+                <li onclick="alert('Partager')"><img src="images/actions/photos.png" class="icon"/> Photos</li>
+                <li onclick="alert('Partager')"><img src="images/actions/videos.png" class="icon"/> Videos</li>
+                <li onclick="alert('Partager')"><img src="images/actions/audios.png" class="icon"/> Audios</li>
+                <li onclick="alert('Partager')"><img src="images/actions/synchro.png" class="icon"/> Synchro &amp; Updates</li>
+
+            </ul>
+        </div>
+        
+        <div id="detailsModule" class="page hide">
+            <h1>Details</h1>
+        </div>
+
+        <div id="homepageModule" class="page hide" style="background-color: transparent; padding: 1.5em 2em 2em 2em;">
+            <p class="white-txt-shadow title" id="appTitle">Clyps Events<br/>Deafult App</p>
+            <p id="appDates">du 23/12/2012<br/>au 23/12/2012</p>
+            <div id="homepageIcons"></div>
+        </div>
+        <div id="infosModule" class="page hide">
+            <div id="infos-content" class="panel">General information</div>
+        </div>
+        <div id="scheduleModule" class="page hide">
+            <div id="schedule-content" class="panel"></div>
+        </div>
+        <div id="myselectionModule" class="page hide">
+        </div>
+        <div id="conferencesModule" class="page hide">
+            <div id="conferences-subpage-categories" class="subpage hide">
+                <h2>Select a category</h2>
+                <div id="conferences-categories"></div>
+            </div>
+            <div id="conferences-subpage-items" class="subpage hide" style="clear: both;">
+                <h2>Select a conference</h2>
+                <div><strong id="conferences-category"></strong></div>
+                <div class="search-container hide">Search Panel</div>
+                <div id="conferences-items"></div>
+            </div>
+        </div>
+        <div id="exhibitorsModule" class="page hide">
+            <div id="exhibitors-subpage-categories" class="subpage hide">
+                <h2>Select a category</h2>
+                <div id="exhibitors-categories"></div>
+            </div>
+            <div id="exhibitors-subpage-items" class="subpage hide" style="clear: both;">
+                <h2>Select a conference</h2>
+                <div><strong id="exhibitors-category"></strong></div>
+                <div class="search-container hide">Search Panel</div>
+                <div id="exhibitors-items"></div>
+            </div>
+            
+        </div>
+        <div id="speakersModule" class="page hide">
+            <div id="speakers-subpage-categories" class="subpage hide">
+                <h2>Select a category</h2>
+                <div id="speakers-categories"></div>
+            </div>
+            <div id="speakers-subpage-items" class="subpage hide" style="clear: both;">
+                <h2>Select a conference</h2>
+                <div><strong id="speakers-category"></strong></div>
+                <div class="search-container hide">Search Panel</div>
+                <div id="speakers-items"></div>
+            </div>
+        </div>
+        <div id="lastminuteModule" class="page hide">
+            <h1>lastminute</h1>
+        </div>
+        <div id="newsModule" class="page hide">
+            <div id="news-subpage-categories" class="subpage hide">
+                <h2>Select a category</h2>
+                <div id="news-categories"></div>
+            </div>
+            <div id="news-subpage-items" class="subpage hide" style="clear: both;">
+                <h2>Select an article</h2>
+                <div><strong id="news-category"></strong></div>
+                <div class="search-container hide">Search Panel</div>
+                <div id="news-items"></div>
+            </div>
+        </div>
+        <div id="sponsorsModule" class="page hide">
+            <div id="sponsors-subpage-categories" class="subpage hide">
+                <h2>Select a category</h2>
+                <div id="news-categories"></div>
+            </div>
+            <div id="sponsors-subpage-items" class="subpage hide" style="clear: both;">
+                <h2>Select a sponsor</h2>
+                <div><strong id="sponsors-category"></strong></div>
+                <div class="search-container hide">Search Panel</div>
+                <div id="sponsors-items"></div>
+            </div>
+        </div>
+        <div id="plansModule" class="page hide">
+            <div id="plans-container"></div>
+        </div>
+        <div id="searchModule" class="page hide">
+            <h1>search</h1>
+        </div>
+        <div id="ratingsModule" class="page hide">
+            <h1>ratings</h1>
+        </div>
+        <div id="specialsModule" class="page hide">
+            <h1>specials</h1>
+        </div>
+        <div id="vipzoneModule" class="page hide">
+            <h1>vipzone</h1>
+        </div>
+        <div id="statsModule" class="page hide">
+            <h1>stats</h1>
+        </div>
+        <div id="settingsModule" class="page hide">
+            <h1>settings</h1>
+        </div>
+
+        <div id="_footer"></div>
+    </body>
+</html>

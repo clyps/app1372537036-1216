@@ -1,0 +1,44 @@
+
+.schedule-where {
+    padding: 5px 0px 5px 0px;
+    text-align: center; 
+    width: 100%; 
+    background-color: #333333;
+    color: #ffffff; 
+    font-size: medium;
+}
+.schedule-date {
+    padding: 5px 0px 5px 0px;
+    text-align: center; 
+    width: 100%; 
+    background-color: #cccccc; 
+    color: #4f4f4f; 
+    font-size: medium;
+}
+.schedule-table {
+    width: 100%;
+    border-bottom: 1px solid #cccccc;
+}
+.schedule-table td {
+    padding: 4px;
+    font-size: medium;
+}
+.schedule-table td.first {
+    width: 48px;
+    height: 48px;
+    color: #0768a9;
+    font-weight: bolf;
+    text-align: center;
+    border-right: 1px solid #efefef;
+    background-color: #f7f7f7;
+    font-size: small;
+}
+.schedule-table td.star {
+    width: 24px;
+    text-align: center;
+}
+.schedule-table td.star img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}

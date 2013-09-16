@@ -1,0 +1,260 @@
+
+/*--------- list pagination ---------------*/
+
+.listView-pg-container {
+    border: 0px solid black; clear: both; text-align: center; width: 100%; padding-bottom: 0.4em;
+}
+
+.listView-pg-bullet {
+    cursor: pointer;
+
+    width: 12px;
+    height: 12px;
+
+
+    border: 0;
+    border-radius: 50%;
+
+    margin-left: 0.6em;
+    margin-right: 0.6em;
+    background-color: #cccccc; 
+    
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#efefef', endColorstr='#777777'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#777777)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #efefef,  #777777); /* for firefox 3.6+ */
+
+}
+
+.listView-pg-bullet.selected {
+    background-color: #3971ea;
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#3971ea'); /* for IE */
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#3971ea)); /* for webkit browsers */
+    background: -moz-linear-gradient(top,  #ffffff,  #3971ea); /* for firefox 3.6+ */
+}
+
+
+/*--------- Simple List ------------------------------*/
+ul.simpleList {
+    position: relative; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.simpleList li {
+    position: relative;
+    min-height: 2em;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ddd;
+    background-color: transparent;
+    /* opacity: 0.9; */
+    margin: 0;
+    font-size: large;
+}
+
+ul.simpleList li.selected  *, ul.simpleList li:hover * {
+    background-color: #6f6f6f;
+    color: #fff;
+    /*opacity: 0.9; */
+}
+
+ul.simpleList li img.picto {
+    height: 36px;
+    width: 36px;
+    margin: 2px;
+}
+
+/*--------- List of items IPHONE style ---------------*/
+
+
+ul.listView {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.listView .right {
+    position: relative;
+    right: 60px;
+    font-size: small;
+}
+ul.listView li a, ul.listView li {
+    padding-left: 0px;
+}
+
+ul.listView .right a, ul.listView li a {
+    cursor: pointer;
+}
+ul.listView .right a:hover, ul.listView li a:hover {
+    text-decoration: underline;
+}
+ul.listView li.arrow.selected a, ul.listView li.selected a {
+    color: #fff;
+}
+ul.listView li:hover *, ul.listView li.selected * {
+    color: #fff;
+    background-color: #999;
+}
+ul.listView li.arrow:hover *, ul.listView li.arrow.selected * {
+    color: #fff;
+    background: #999 url("images/arrow_white.png") no-repeat right center;
+}
+ul.listView li:hover, ul.listView li:hover a, ul.listView li:hover a.link, ul.listView li:hover td * {
+    color: #fff;
+    background-color: #999;
+}
+
+ul.listView li {
+    font-size: large;
+    padding: 0.2em 1em 0.2em 0.8em;
+    background-color: transparent;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #a0a0a0;
+    border-left: 1px solid #a0a0a0;
+    border-right: 1px solid #a0a0a0;
+}
+ul.listView li .normal {
+    font-weight: normal;
+}
+ul.listView li:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top: 1px solid #a0a0a0;
+}
+
+ul.listView li:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom: 1px solid #a0a0a0;
+}
+
+ul.listView li.arrow {
+    background: transparent url("images/arrow.png") no-repeat right center;
+}
+
+/*---------------- List of Tiles --------------------*/
+
+ul.listTiles {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.listTiles li {
+    position: relative;
+    width: 49%;
+    min-width: 49%;
+    max-width: 49%;
+    height: 8em; 
+    float: left;
+    border: 1px solid #fff;
+    
+    margin: 0;
+    padding: 0;
+}
+
+ul.listTiles li.selected {
+    border: 0.1em solid #ff0000;
+}
+
+ul.listTiles li .itemText {
+    /* background-color: #333;
+    color: #ffffff; */
+    position: relative; 
+    height: 2em;
+    padding: 0.1em 0.5em 0.1em 0.5em;
+    opacity: 0.75;
+    filter: alpha(opacity = 75);
+}
+
+/*----------- List of Icons -------------------------*/
+#appListing {
+    height: 81%;
+}
+ul.listIcons {
+    position: relative; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top: 0.5em;
+}
+
+ul.listIcons li.cols3  {
+    position: relative;
+    width: 32%; 
+    height: 6em; 
+    float: left;
+    border: 0px;
+    text-align: center;
+
+    margin: 0;
+    padding: 0;
+}
+
+ul.listIcons li  {
+    position: relative;
+    width: 25%; 
+    height: 6em; 
+    float: left;
+    border: 0px;
+    text-align: center;
+    margin: 0;
+    padding: 0px;
+    padding-left: 10px;
+}
+
+ul.listIcons li .iconText {
+    font-size: medium;
+    font-weight: normal;
+}
+
+ul.listIcons li img.picto {
+    width: 48px;
+    height: 48px;
+}
+
+ul.listIcons li.selected {
+    background-color: lightblue;
+    border-radius: 6px;
+}
+
+ul.listIcons li .icon-container {
+    width: 108px;
+    height: 108px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/*--------- SORT separator ---------------*/
+li.sort-title, ul.listView li.sort-title, ul.simpleList li.sort-title, ul.listIcons li.sort-title, ul.listTiles li.sort-title {
+    clear: both;
+    background-color: #ccc;
+    color: #fff;
+
+    height: 1em;
+    max-height: 1em;
+    min-height: 1em;
+    text-align: center;
+}
+ul.listIcons li.sort-title, ul.listTiles li.sort-title {
+    min-width: 98%;
+    width: 98%;
+    max-width: 98%;
+}
+/*_______________ Search styles _______________________*/
+
+.inputSearch {
+    position: relative;
+    width: 100%;
+    border-radius: 2em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-size: large;
+}
+
+
+
